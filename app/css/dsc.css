@@ -1,0 +1,278 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    line-height: 1.8;
+}
+a {
+    text-decoration: none;
+    color: #6930c3;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: #5e60ce;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #6930c3, #5e60ce);
+    color: white;
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+header img {
+    height: 50px;
+}
+header .logo h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+header p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #5e60ce;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.navbar ul li a {
+    color: white;
+    font-size: 1rem;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+.navbar ul li a:hover {
+    background-color: #6930c3;
+    border-radius: 5px;
+}
+
+/* Main Content */
+.main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.section-header h2 {
+    font-size: 2rem;
+    color: #6930c3;
+}
+.section-header p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* DSC Information Section */
+.fastag-info ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+.fastag-info ul li {
+    margin: 10px 0;
+}
+
+/* Types of DSC Section */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+}
+.step-card {
+    padding: 20px;
+    background: #ffffff;
+    border: 2px solid #6930c3;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+.step-card h3 {
+    font-size: 1.5rem;
+    color: #6930c3;
+    margin-bottom: 15px;
+}
+.step-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Centering the Middle Box in the Last Row */
+.steps > .step-card:nth-child(5) {
+    grid-column: 2 / 3; /* Span the second column for the center box */
+}
+
+/* Responsive Design for Types Section */
+@media (max-width: 1024px) {
+    .steps {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+    }
+    .steps > .step-card:nth-child(5) {
+        grid-column: span 2; /* Full width for the center box */
+        justify-self: center;
+    }
+}
+@media (max-width: 768px) {
+    .steps {
+        grid-template-columns: 1fr; /* One column for mobile devices */
+    }
+    .steps > .step-card:nth-child(5) {
+        grid-column: auto; /* Normal flow on mobile */
+    }
+}
+/* Apply Section */
+.apply {
+    background: #6930c3;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.apply h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+.apply p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+.apply-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* For smaller screens */
+    gap: 20px;
+}
+.apply-buttons a {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.apply-buttons .call-btn {
+    background-color: white;
+    color: #6930c3;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.apply-buttons .call-btn:hover {
+    background-color: #5e60ce;
+    color: white;
+}
+.apply-buttons .whatsapp-btn {
+    background-color: #25d366;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.apply-buttons .whatsapp-btn:hover {
+    background-color: #1aa260;
+}
+.apply-buttons .email-btn {
+    background-color: #5e60ce;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.apply-buttons .email-btn:hover {
+    background-color: #6930c3;
+}
+
+/* FAQ Section */
+.faq button {
+    width: 100%;
+    padding: 15px;
+    background-color: #6930c3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.faq button:hover {
+    background-color: #5e60ce;
+}
+.faq .answer {
+    display: none;
+    padding: 15px;
+    background-color: #f9faff;
+    border-left: 4px solid #6930c3;
+    margin: 0;
+}
+
+/* Footer */
+footer {
+    background: #5e60ce;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+footer p {
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .apply-buttons a {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+}
+@media (max-width: 768px) {
+    .apply-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+    }
+    .apply-buttons a {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apply for your PAN Card seamlessly with DAVID CAREALLE DIGITAL SERVICES PVT LTD.">
+    <meta name="keywords" content="PAN Card, Apply PAN Card, PAN Services, FAQs, DAVID CAREALLE DIGITAL SERVICES PVT LTD">
+    <meta name="author" content="DAVID CAREALLE DIGITAL SERVICES PVT LTD">
+    <title>PAN Card Services - DAVID CAREALLE DIGITAL SERVICES PVT LTD</title>
+    <link rel="stylesheet" href="css/pancard.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="images/CAREALL LOGO BROAD.png" alt="CareAll Logo">
+            <div>
+                <h1>DAVID CAREALLE DIGITAL SERVICES PVT LTD</h1>
+                <p>Effortless, Reliable, and Fast PAN Card Solutions</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html#455">Home</a></li>
+            <li><a href="#what-is-pan">What is PAN</a></li>
+            <li><a href="#apply-for-pan">Apply for PAN</a></li>
+            <li><a href="#faq">FAQs</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main">
+
+
+
+        <!-- Section 3: Contact -->
+        <section id="contact" class="contact">
+            <h2>Apply for Your PAN Card NOW</h2>
+            <p>Contact DAVID CAREALLE DIGITAL SERVICES PVT LTDs for fast and reliable PAN card services.</p>
+            <div class="contact-buttons">
+                <a href="tel:7373710180" class="call-btn">Call Now: 7373710180</a>
+                <a href="https://wa.me/7373710180" target="_blank" class="whatsapp-btn">WhatsApp Us</a>
+                <a href="mailto:carealldigital2020@gmail.com" class="email-btn">Email Us</a>
+            </div>
+        </section>
+        <!-- Section 1: What is PAN -->
+        <section id="what-is-pan" class="section">
+            <div class="section-header">
+                <h2>What is a PAN Card?</h2>
+                <p>Understand its importance in the Indian financial system.</p>
+            </div>
+            <div class="pan-info">
+                <p>
+                    The Permanent Account Number (PAN) is a unique 10-character alphanumeric identifier
+                    issued by the Income Tax Department of India. It is essential for tracking financial transactions,
+                    filing income tax returns, and ensuring compliance with tax laws.
+                </p>
+                <ul>
+                    <li>Filing income tax returns and paying taxes.</li>
+                    <li>High-value transactions exceeding ₹50,000.</li>
+                    <li>Buying or selling property worth ₹10 lakhs or more.</li>
+                    <li>Opening bank accounts or applying for credit cards.</li>
+                    <li>Serving as valid identity proof in various situations.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 2: Apply for PAN -->
+        <section id="apply-for-pan" class="section">
+            <div class="section-header">
+                <h2>Apply for a PAN Card</h2>
+                <p>Choose the right service for your PAN card needs.</p>
+            </div>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>New PAN Application</h3>
+                    <p>Apply for a new PAN card if you don't already have one.</p>
+                    <a href="https://wa.me/7373710180" class="apply-btn">Apply Now</a>
+                </div>
+                <div class="feature-card">
+                    <h3>Correction in PAN</h3>
+                    <p>Update incorrect details on your existing PAN card.</p>
+                    <a href="mailto:carealldigital2020@gmail.com" class="email-btn">Update Now</a>
+                </div>
+                <div class="feature-card">
+                    <h3>Duplicate PAN Card</h3>
+                    <p>Request a duplicate if your PAN card is lost or damaged.</p>
+                    <a href="mailto:carealldigital2020@gmail.com" class="email-btn">Request Now</a>
+                </div>
+                <div class="feature-card">
+                    <h3>Minor PAN</h3>
+                    <p>Apply for a PAN card on behalf of a minor with CareAll.</p>
+                    <a href="https://wa.me/7373710180" class="apply-btn">Apply Now</a>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- Section 4: FAQ -->
+        <section id="faq" class="section faq">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <button onclick="toggleAnswer(1)">Can I apply for a PAN card online?</button>
+            <div class="answer" id="answer-1">
+                <p>Yes, you can apply for a PAN card online through NSDL or UTIITSL portals.</p>
+            </div>
+            <button onclick="toggleAnswer(2)">What documents are required for applying for a PAN card?</button>
+            <div class="answer" id="answer-2">
+                <p>Documents such as Aadhaar card, proof of address, and proof of date of birth are required.</p>
+            </div>
+            <button onclick="toggleAnswer(3)">What happens if I lose my PAN card?</button>
+            <div class="answer" id="answer-3">
+                <p>You can apply for a duplicate PAN card through the official portals.</p>
+            </div>
+            <button onclick="toggleAnswer(4)">How long does it take to get a PAN card?</button>
+            <div class="answer" id="answer-4">
+                <p>It usually takes 7-15 business days after the application is processed.</p>
+            </div>
+            <button onclick="toggleAnswer(5)">What is the fee for PAN card application?</button>
+            <div class="answer" id="answer-5">
+                <p>The application fee is ₹107 for Indian residents and ₹1,017 for foreign applicants.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 DAVID CAREALLE DIGITAL SERVICES PVT LTD. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Script for FAQ Toggle -->
+    <script>
+        function toggleAnswer(id) {
+            const answer = document.getElementById(`answer-${id}`);
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
