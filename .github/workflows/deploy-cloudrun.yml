@@ -1,4 +1,4 @@
-name: CI/CD — Build & Deploy to Cloud Run
+name: Build, push image and deploy to Cloud Run
 
 on:
   push:
@@ -6,53 +6,49 @@ on:
       - main
 
 env:
-  IMAGE: gcr.io/${{ secrets.GCP_PROJECT }}/mydevops-demo:${{ github.sha }}
-  SERVICE: ${{ secrets.SERVICE_NAME }}
-  REGION: ${{ secrets.GCP_REGION }}
-
-permissions:
-  contents: read
-  id-token: write
-  actions: write
+  IMAGE_NAME: mydevops-demo
 
 jobs:
   build-and-deploy:
-    name: Build, push image and deploy to Cloud Run
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Authenticate to GCP
+      - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v1
         with:
-          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+          project_id: ${{ secrets.GCP_PROJECT }}
 
-      - name: Configure docker credential helper
+      - name: Configure docker credential helper for GCR
         run: |
           gcloud --quiet auth configure-docker
 
-      - name: Build & push Docker image
+      - name: Build and push Docker image to GCR
         uses: docker/build-push-action@v4
         with:
-          context: .
           file: ./Dockerfile
+          context: .
           push: true
-          tags: ${{ env.IMAGE }}
+          tags: gcr.io/${{ secrets.GCP_PROJECT }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
 
       - name: Deploy to Cloud Run
         uses: google-github-actions/deploy-cloudrun@v1
         with:
           project_id: ${{ secrets.GCP_PROJECT }}
-          service: ${{ env.SERVICE }}
-          image: ${{ env.IMAGE }}
+          service: ${{ secrets.SERVICE_NAME }}
+          image: gcr.io/${{ secrets.GCP_PROJECT }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
           region: ${{ secrets.GCP_REGION }}
           allow_unauthenticated: true
 
       - name: Print service URL
         run: |
-          gcloud run services describe "${{ env.SERVICE }}" \
+          gcloud run services describe "${{ secrets.SERVICE_NAME }}" \
             --project="${{ secrets.GCP_PROJECT }}" \
             --region="${{ secrets.GCP_REGION }}" \
             --format 'value(status.url)'
